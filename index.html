@@ -21,6 +21,7 @@
 <body>
 <!-- Page container -->
 	<div class="container">
+
 		<!-- row 1 header -->
 		<div id="title" class="row">
 		  	<div class="jumbotron">
@@ -39,61 +40,63 @@
 			<!-- column 1 ends -->
 			</div>
 			<!-- container for alphabet buttons -->
-			<div class="alpha">
+			<!-- <div class="alpha">
 			<!-- column 2 all guesses and all letter buttons -->
 			<div class="column">
 				<!-- row 1a all correct letter guesses -->
 				<div class="row">
-					<button type="button" class="btn btn-danger btn-lg">N</button>
+					<p>Your neighbor is a _ _ _ _ _!</p>
+					<!-- <button type="button" class="btn btn-danger btn-lg">N</button>
 					<button type="button" class="btn btn-danger btn-lg">U</button>
 					<button type="button" class="btn btn-danger btn-lg">R</button>
 					<button type="button" class="btn btn-danger btn-lg">S</button>
-					<button type="button" class="btn btn-danger btn-lg">E</button>
+					<button type="button" class="btn btn-danger btn-lg">E</button> -->
 				<!-- row 1a ends -->
 				</div>
-				<p>
+				<!-- <p>
 					Choose a letter below:
-				</p>
+				</p> -->
 				<!-- row 2a buttons A - H 8 total-->
 				<div class="row">
-					<button type="button" class="btn btn-primary btn-sm">A</button>
+					<p>Number of guesses remaining: 5</p>
+					<!-- <button type="button" class="btn btn-primary btn-sm">A</button>
 					<button type="button" class="btn btn-success btn-sm">B</button>
 					<button type="button" class="btn btn-info btn-sm">C</button>
 					<button type="button" class="btn btn-warning btn-sm">D</button>
 					<button type="button" class="btn btn-danger btn-sm onclick="getElementById('fifth').innerHTML='E'">E</button>
 					<button type="button" class="btn btn-primary btn-sm">F</button>
 					<button type="button" class="btn btn-success btn-sm">G</button>
-					<button type="button" class="btn btn-info btn-sm">H</button>
+					<button type="button" class="btn btn-info btn-sm">H</button> -->
 					<!-- row 2a ends -->
 				</div>
 				<!-- row 2b buttons I - P 8 total-->
 				<div class="row">
-					<button type="button" class="btn btn-primary btn-sm">I</button>
+					<!-- <button type="button" class="btn btn-primary btn-sm">I</button>
 					<button type="button" class="btn btn-success btn-sm">J</button>
 					<button type="button" class="btn btn-info btn-sm">K</button>
 					<button type="button" class="btn btn-warning btn-sm">L</button>
 					<button type="button" class="btn btn-danger btn-sm">M</button>
 					<button type="button" class="btn btn-primary btn-sm onclick="getElementById('first').innerHTML='N'">N</button>
 					<button type="button" class="btn btn-success btn-sm">O</button>
-					<button type="button" class="btn btn-info btn-sm">P</button>				
+					<button type="button" class="btn btn-info btn-sm">P</button>				 -->
 					<!-- row 2b ends -->
 				</div>
 				<!-- row 2c buttons Q -X 8 total-->
 				<div class="row">
-					<button type="button" class="btn btn-primary btn-sm">Q</button>
+					<!-- <button type="button" class="btn btn-primary btn-sm">Q</button>
 					<button type="button" class="btn btn-success btn-sm onclick="getElementById('third').innerHTML='R'">R</button>
 					<button type="button" class="btn btn-info btn-sm onclick="getElementById('fourth').innerHTML='S'">S</button>
 					<button type="button" class="btn btn-warning btn-sm">T</button>
 					<button type="button" class="btn btn-danger btn-sm onclick="getElementById('second').innerHTML='U'">U</button>
 					<button type="button" class="btn btn-primary btn-sm">V</button>
 					<button type="button" class="btn btn-success btn-sm">W</button>
-					<button type="button" class="btn btn-info btn-sm">X</button>
+					<button type="button" class="btn btn-info btn-sm">X</button> -->
 					<!-- row 2c ends -->
 				</div>
 				<!-- row 2d Y - Z  2 total-->
 				<div class="row">
-					<button type="button" class="btn btn-primary btn-sm">Y</button>
-					<button type="button" class="btn btn-success btn-sm">Z</button>				
+					<!-- <button type="button" class="btn btn-primary btn-sm">Y</button>
+					<button type="button" class="btn btn-success btn-sm">Z</button>			 -->	
 				<!-- row 2d ends -->
 				</div>
 			<!-- column 2 ends  -->
@@ -114,5 +117,49 @@
 
 <!-- Container ends -->
 </div>
+<!-- Game Javascript -->
+<script type="text/javascript">
+var computerChoices = ["Judge", "Nurse", "Baker", "Actor"];
+var char0 = "_";
+var char1 = "_";
+var char2 = "_";
+var char3 = "_";
+var char4 = "_";
+var guessRemain = 5;
+
+
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var hmAnswer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+//user clicks key
+	if (userGuess == computerChoices.charAt(0)){
+		var html = "<p> Your neighbor is a" + userGuess + char1 +char2 + char3 + char4 + "!</p>";
+		"<p>Number of guesses remaining: " + guessRemain + "</p>";
+	}
+		else if (userGuess == computerChoice.charAt(1)){
+			var html = "<p> Your neighbor is a" + char0 + userGuess + char2 + char3 + char4 + "!</p>";
+			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		}
+	 	else if (userGuess == computerChoice.charAt(2)){
+			var html = "<p> Your neighbor is a" + char0 + char1 + userGuess + char3 + char4 + "!</p>";
+			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		}
+		else if (userGuess == computerChoice.charAt(3)){
+			var html = "<p> Your neighbor is a" + char0 + char1  + char2 + userGuess + char4 + "!</p>";
+			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		}
+		else if (userGuess == computerChoice.charAt(4)){
+			var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>";
+			"<p>Number of guesses remaining: " + guessRemain + "</p>";
+		}
+		else {
+			guessRemain = -1
+			var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>"; 
+				"Number of guesses remaining: " + guessRemain + "</p>";
+		
+		document.querySelector('#game').innerHTML = html;
+
+
+</script>
 </body>
 </html>
