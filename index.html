@@ -132,33 +132,47 @@ document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	var hmAnswer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 //user clicks key
-	if (userGuess == computerChoices.charAt(0)){
-		var html = "<p> Your neighbor is a" + userGuess + char1 +char2 + char3 + char4 + "!</p>";
-		"<p>Number of guesses remaining: " + guessRemain + "</p>";
-	}
-		else if (userGuess == computerChoice.charAt(1)){
-			var html = "<p> Your neighbor is a" + char0 + userGuess + char2 + char3 + char4 + "!</p>";
-			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		}
-	 	else if (userGuess == computerChoice.charAt(2)){
-			var html = "<p> Your neighbor is a" + char0 + char1 + userGuess + char3 + char4 + "!</p>";
-			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		}
-		else if (userGuess == computerChoice.charAt(3)){
-			var html = "<p> Your neighbor is a" + char0 + char1  + char2 + userGuess + char4 + "!</p>";
-			"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		}
-		else if (userGuess == computerChoice.charAt(4)){
-			var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>";
-			"<p>Number of guesses remaining: " + guessRemain + "</p>";
-		}
-		else {
-			guessRemain = -1
-			var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>"; 
-				"Number of guesses remaining: " + guessRemain + "</p>";
-		
-		document.querySelector('#game').innerHTML = html;
+	if (userGuess == hmAnswer[
 
+// USE SPLIT INSTEAD FIGURE OUT HOW>>>>>>>>>>>>
+
+
+		str.charAt(0)
+
+
+
+		]
+
+
+
+
+		){
+		var char0 = userGuess;
+		}
+		var html = "<p> Your neighbor is a" + char0 + char1 +char2 + char3 + char4 + "!</p>";
+		"<p>Number of guesses remaining: " + guessRemain + "</p>";
+		// else if (userGuess == computerChoice.charAt(1)){
+		// 	var html = "<p> Your neighbor is a" + char0 + userGuess + char2 + char3 + char4 + "!</p>";
+		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		// }
+	 // 	else if (userGuess == computerChoice.charAt(2)){
+		// 	var html = "<p> Your neighbor is a" + char0 + char1 + userGuess + char3 + char4 + "!</p>";
+		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		// }
+		// else if (userGuess == computerChoice.charAt(3)){
+		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2 + userGuess + char4 + "!</p>";
+		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
+		// }
+		// else if (userGuess == computerChoice.charAt(4)){
+		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>";
+		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";
+		// }
+		// else {
+		// 	guessRemain = -1
+		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>"; 
+		// 		"Number of guesses remaining: " + guessRemain + "</p>";	
+		document.querySelector('#game').innerHTML = html;
+}
 
 </script>
 </body>

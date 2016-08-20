@@ -49,5 +49,6 @@ document.onkeyup = function(event) {
 		}
 		document.querySelector('#game').innerHTML = html;
 }
+(userGuess != computerChoice.charAt(0)) || (userGuess != computerChoice.charAt(1)) || (userGuess != computerChoice.charAt(2)) || (userGuess != computerChoice.charAt(3)) || (userGuess != computerChoice.charAt(4)) 
 
 </script>
