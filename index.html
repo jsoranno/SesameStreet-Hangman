@@ -36,7 +36,7 @@
 		<div id="title" class="row">
 		  	<div class="jumbotron">
     			<h1>Who are the people in your neighborhood?</h1>
-    			<p>Help Elmo by using the letter(s) of the day!</p>
+    			<h2>Help Elmo by using the letter(s) of the day!</h2>
     		<!-- End Jumbotron -->
   			</div> 
 		<!-- row 1 ends -->
@@ -46,68 +46,18 @@
 		<div class="row">
 			<!-- column 1 hangman image -->
 			<div class="column">
-			<img src="assets/images/placeholder.jpg" class="placeholderimg" alt="Sesame Street characters looking at game">
+			<img src="assets/images/placeholder.jpg" class="placeholderimg img-rounded left-block" alt="Sesame Street characters looking at game">
 			<!-- column 1 ends -->
 			</div>
 			<!-- container for alphabet buttons -->
 			<!-- <div class="alpha">
-			<!-- column 2 all guesses and all letter buttons -->
+			<!-- column 2 all guesses and answer-->
 			<div class="column" id="game">
 				<!-- row 1a all correct letter guesses -->
 				<div class="row">
 					<p>Your neighbor is a _ _ _ _ _!</p>
-					<!-- <button type="button" class="btn btn-danger btn-lg">N</button>
-					<button type="button" class="btn btn-danger btn-lg">U</button>
-					<button type="button" class="btn btn-danger btn-lg">R</button>
-					<button type="button" class="btn btn-danger btn-lg">S</button>
-					<button type="button" class="btn btn-danger btn-lg">E</button> -->
-				<!-- row 1a ends -->
-				<!-- </div> -->
-				<!-- <p>
-					Choose a letter below:
-				</p> -->
-				<!-- row 2a buttons A - H 8 total-->
-				<!-- <div class="row"> -->
 					<p>Number of guesses remaining: 10</p>
-					<!-- <button type="button" class="btn btn-primary btn-sm">A</button>
-					<button type="button" class="btn btn-success btn-sm">B</button>
-					<button type="button" class="btn btn-info btn-sm">C</button>
-					<button type="button" class="btn btn-warning btn-sm">D</button>
-					<button type="button" class="btn btn-danger btn-sm onclick="getElementById('fifth').innerHTML='E'">E</button>
-					<button type="button" class="btn btn-primary btn-sm">F</button>
-					<button type="button" class="btn btn-success btn-sm">G</button>
-					<button type="button" class="btn btn-info btn-sm">H</button> -->
 					<!-- row 2a ends -->
-				</div>
-				<!-- row 2b buttons I - P 8 total-->
-				<div class="row">
-					<!-- <button type="button" class="btn btn-primary btn-sm">I</button>
-					<button type="button" class="btn btn-success btn-sm">J</button>
-					<button type="button" class="btn btn-info btn-sm">K</button>
-					<button type="button" class="btn btn-warning btn-sm">L</button>
-					<button type="button" class="btn btn-danger btn-sm">M</button>
-					<button type="button" class="btn btn-primary btn-sm onclick="getElementById('first').innerHTML='N'">N</button>
-					<button type="button" class="btn btn-success btn-sm">O</button>
-					<button type="button" class="btn btn-info btn-sm">P</button>				 -->
-					<!-- row 2b ends -->
-				</div>
-				<!-- row 2c buttons Q -X 8 total-->
-				<div class="row">
-					<!-- <button type="button" class="btn btn-primary btn-sm">Q</button>
-					<button type="button" class="btn btn-success btn-sm onclick="getElementById('third').innerHTML='R'">R</button>
-					<button type="button" class="btn btn-info btn-sm onclick="getElementById('fourth').innerHTML='S'">S</button>
-					<button type="button" class="btn btn-warning btn-sm">T</button>
-					<button type="button" class="btn btn-danger btn-sm onclick="getElementById('second').innerHTML='U'">U</button>
-					<button type="button" class="btn btn-primary btn-sm">V</button>
-					<button type="button" class="btn btn-success btn-sm">W</button>
-					<button type="button" class="btn btn-info btn-sm">X</button> -->
-					<!-- row 2c ends -->
-				</div>
-				<!-- row 2d Y - Z  2 total-->
-				<div class="row">
-					<!-- <button type="button" class="btn btn-primary btn-sm">Y</button>
-					<button type="button" class="btn btn-success btn-sm">Z</button>			 -->	
-				<!-- row 2d ends -->
 				</div>
 			<!-- column 2 ends  -->
 			</div>
@@ -119,7 +69,7 @@
 		<!-- row 3 -->
 		<footer>
 		<div class="row">
-			<<img src="assets/images/bottom.png" alt="peekaboo elmo">
+			<img src="assets/images/bottom.png" alt="peekaboo elmo" class="img-rounded center-block">
 		<!-- row 3 ends -->
 		</div>
 		</footer>
@@ -130,7 +80,10 @@
 
 <script type="text/javascript">
 
-swal("LET'S PLAY!");
+swal({   
+	title: "LET'S PLAY!",        
+	confirmButtonColor: "#239238",   
+	});
 
 //computer randomly selects one of the occupations in the array 
 //user keyclick event
@@ -142,6 +95,9 @@ swal("LET'S PLAY!");
 //if right letters are selected, show you win image
 //close alert and restart from computer random choice
 
+
+	// VARIABLES
+	// ==========================================================================
 	var computerChoices = ["JUDGE", "NURSE", "BAKER", "CODER"];
 	var char0 = "_";
 	var char1 = "_";
@@ -150,7 +106,9 @@ swal("LET'S PLAY!");
 	var char4 = "_";
 	var guessRemain = 10;
 	var hmAnswer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	
+
+	// GAME PLAY
+	// ==============================================================================	
 	document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 	//splits random occupation into an array of letters

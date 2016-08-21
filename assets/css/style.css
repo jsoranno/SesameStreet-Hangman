@@ -15,6 +15,10 @@ body {
 /*general*/
 .jumbotron {
 	background-color: #239238;
+	color: white;
+	text-align: center;
+	
+
 }
 .container {
 	width: 100%;
@@ -22,12 +26,13 @@ body {
 	margin: 0 auto;
 	clear: both;
 }
-h1, 
-h2,
+/*h1,*/ 
+/*h2,*/
 h3,
 p {
 	margin-bottom: 20px;
-	color: white;
+	color: #239238;
+
 }
 p:last-child {
 	margin-bottom: 0;
@@ -35,17 +40,15 @@ p:last-child {
 h1, h2, h3 {
 	font-family: 'Didact Gothic', sans-serif;
 	font-weight: 700;
-	color: #4aaaa5;
 }
 h1 {
 	font-size: 30px;
-	line-height: 49px;
+	line-height: 60px;
 	border-bottom: 3px solid #ddd;
 	padding-bottom: 20px;
 }
-h2,
-h3 {
-	font-size: 22px;
+h2{
+	font-size: 20px;
 }
 
 /*header*/
@@ -60,18 +63,9 @@ h3 {
 	position: fixed;
 	width: 100%;
 }
-#logo {
-	width: 250px;
-	height: 90px;
-	background: #4aaaa5;
-	float: left;
-	font-family: 'Didact Gothic', sans-serif;
-	text-align: center;
-	line-height: 90px;
-	color: #fff;
-	font-weight: 700;
-	font-size: 30px;
-	text-decoration: none;
+.placeholderimg {
+	float:left;
+	width:50%;
 }
 
 
@@ -83,14 +77,26 @@ footer {
 	padding: 30px 0;
 	clear: both;
 	color: #ccc;
-	font-size: 12px;
-	text-align: center;*/
+	font-size: 12px;*/
+
 }
 
 /*sidebar*/
-
+#game {
+	/*width: 250px;
+	height: 90px;*/
+/*	background: #4aaaa5;*/
+/*	float: right;*/
+	font-family: 'Didact Gothic', sans-serif;
+	text-align: center;
+	line-height: 90px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 30px;
+	text-decoration: none;
+}
 .alpha {
-	background: #fff;
+/*	background: #fff;*/
 	padding: 30px;
 	width: 100%;
 	min-width: 375px;
@@ -98,8 +104,7 @@ footer {
 	border: 1px solid #ddd;
 	margin-bottom: 20px;
 }
-h3,
-.alpha h2 {
+/*.alpha h2 {
 	border-bottom: 2px solid #eee;
 	padding-bottom: 20px;
 	margin-bottom: 15px;
@@ -107,11 +112,11 @@ h3,
 	width: 62px;
 	height: 62px;
 	margin-top: 8px;
-	margin-right: 5px;
+	margin-right: 5px;*/
 }
-.alpha:last-child {
+/*.alpha:last-child {
 	margin-right: 0;
-}
+}*/
 
 /*main*/
 
@@ -157,7 +162,7 @@ main {
 	.placeholderimg {
 		width: 50%;
 	}
-	.alph {
+	.alpha {
 		margin-bottom: 40px;
 	}
 }
@@ -167,7 +172,7 @@ main {
 		position: static;
 		margin-bottom: 20px;
 	}
-	header .container {
+	header.container {
 		padding: 0;
 	}
 	main.container {
