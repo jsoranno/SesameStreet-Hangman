@@ -10,13 +10,23 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/style.css">
+
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Questrial" rel="stylesheet">
+	<!-- Sweet Alert -->
+	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<!-- JAVASCRIPT -->
+	<script src="bower_components/sweetalert/dist/sweetalert.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	
 	<!-- Latest slim minified jQuery CDN -->
 	<script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+	
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- music -->
+
 </head>
 <body>
 <!-- Page container -->
@@ -42,7 +52,7 @@
 			<!-- container for alphabet buttons -->
 			<!-- <div class="alpha">
 			<!-- column 2 all guesses and all letter buttons -->
-			<div class="column">
+			<div class="column" id="game">
 				<!-- row 1a all correct letter guesses -->
 				<div class="row">
 					<p>Your neighbor is a _ _ _ _ _!</p>
@@ -52,13 +62,13 @@
 					<button type="button" class="btn btn-danger btn-lg">S</button>
 					<button type="button" class="btn btn-danger btn-lg">E</button> -->
 				<!-- row 1a ends -->
-				</div>
+				<!-- </div> -->
 				<!-- <p>
 					Choose a letter below:
 				</p> -->
 				<!-- row 2a buttons A - H 8 total-->
-				<div class="row">
-					<p>Number of guesses remaining: 5</p>
+				<!-- <div class="row"> -->
+					<p>Number of guesses remaining: 10</p>
 					<!-- <button type="button" class="btn btn-primary btn-sm">A</button>
 					<button type="button" class="btn btn-success btn-sm">B</button>
 					<button type="button" class="btn btn-info btn-sm">C</button>
@@ -117,63 +127,101 @@
 
 <!-- Container ends -->
 </div>
-<!-- Game Javascript -->
+
 <script type="text/javascript">
-var computerChoices = ["Judge", "Nurse", "Baker", "Actor"];
-var char0 = "_";
-var char1 = "_";
-var char2 = "_";
-var char3 = "_";
-var char4 = "_";
-var guessRemain = 5;
 
+swal("LET'S PLAY!");
 
-document.onkeyup = function(event) {
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+//computer randomly selects one of the occupations in the array 
+//user keyclick event
+//if key character is the same as one of the characters in the computers array choice
+//have html change to show letter placement
+//if key character does not match the characters in the array, minus remaining tries html
+//repeat for all characters until not matching key characters equals 5
+//if wrong key strokes is => 5, alert image for try again
+//if right letters are selected, show you win image
+//close alert and restart from computer random choice
+
+	var computerChoices = ["JUDGE", "NURSE", "BAKER", "CODER"];
+	var char0 = "_";
+	var char1 = "_";
+	var char2 = "_";
+	var char3 = "_";
+	var char4 = "_";
+	var guessRemain = 10;
 	var hmAnswer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-//user clicks key
-	if (userGuess == hmAnswer[
+	
+	document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+	//splits random occupation into an array of letters
+	var letterhmAnswer = hmAnswer.split("");
+	// console.log(userGuess);
+	// console.log(letterhmAnswer);
+	//change _ to correct letter
+	if(userGuess == letterhmAnswer[0]){
+		//console.log(userGuess);
+		char0 = userGuess; 
+	}
+	if(userGuess == letterhmAnswer[1]){
+		char1 = userGuess;
+	}
+	if(userGuess == letterhmAnswer[2]){
+		char2 = userGuess;
+	}
+	if(userGuess == letterhmAnswer[3]){
+		char3 = userGuess;
+	}
+	if(userGuess == letterhmAnswer[4]){
+		char4 = userGuess;
+	}
+	else{
+		guessRemain -= 1;
+	}
+	//console.log(guessRemain);
+	var html = 
+			"<div class='row'>" +
+			"<p> Your neighbor is a " + char0 + char1 +char2 + char3 + char4 + "!</p>" +
+			"</div>" +
+			"<div class='row'>" +
+			"<p> Number of guesses remaining: " + guessRemain + "</p>" +
+			"</div>";
 
-// USE SPLIT INSTEAD FIGURE OUT HOW>>>>>>>>>>>>
-
-
-		str.charAt(0)
-
-
-
-		]
-
-
-
-
-		){
-		var char0 = userGuess;
-		}
-		var html = "<p> Your neighbor is a" + char0 + char1 +char2 + char3 + char4 + "!</p>";
-		"<p>Number of guesses remaining: " + guessRemain + "</p>";
-		// else if (userGuess == computerChoice.charAt(1)){
-		// 	var html = "<p> Your neighbor is a" + char0 + userGuess + char2 + char3 + char4 + "!</p>";
-		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		// }
-	 // 	else if (userGuess == computerChoice.charAt(2)){
-		// 	var html = "<p> Your neighbor is a" + char0 + char1 + userGuess + char3 + char4 + "!</p>";
-		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		// }
-		// else if (userGuess == computerChoice.charAt(3)){
-		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2 + userGuess + char4 + "!</p>";
-		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";		
-		// }
-		// else if (userGuess == computerChoice.charAt(4)){
-		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>";
-		// 	"<p>Number of guesses remaining: " + guessRemain + "</p>";
-		// }
-		// else {
-		// 	guessRemain = -1
-		// 	var html = "<p> Your neighbor is a" + char0 + char1  + char2  + char3 + userGuess + "!</p>"; 
-		// 		"Number of guesses remaining: " + guessRemain + "</p>";	
 		document.querySelector('#game').innerHTML = html;
-}
+	// end of key press function 
+	if (guessRemain === 0){
+		swal({   
+			title: "Try Again!",   
+			text: "You ran out of guesses.",   
+			imageUrl: "assets/images/again.png",      
+			confirmButtonColor: "#239238",   
+			confirmButtonText: "Play again!",   
+			closeOnConfirm: false }, 
 
+			function(){  
+				location.reload(); 
+			});
+	}		
+	if (hmAnswer == char0 + char1 + char2 + char3 + char4){
+		// document.write('<iframe width="420" height="315" src="https://www.youtube.com/embed/pPR_NasydvY?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1;" frameborder="0" allowfullscreen></iframe>')
+		swal({   
+			title: "YOU WON!",   
+			text: "Your neighbor is a " + hmAnswer + "!",   
+			imageUrl: "assets/images/winner.png",      
+			confirmButtonColor: "#239238",   
+			confirmButtonText: "Play again!",   
+			closeOnConfirm: false },
+
+			function(){  
+				location.reload(); 
+			});
+	}
+	}
 </script>
+
+	<!-- Sweet Alert -->
+	
+
+	<!-- Game Javascript -->
+	<!-- <script src="assets/javascript/game.js" type="text/javascript" charset="utf-8" async defer></script> -->
 </body>
 </html>
