@@ -45,8 +45,13 @@
 		<!-- row 2 img and all letters-->
 		<div class="row">
 			<!-- column 1 hangman image -->
-			<div class="column">
+			<div class="column" id="test">
 			<img src="assets/images/placeholder.jpg" class="placeholderimg img-rounded left-block" alt="Sesame Street characters looking at game">
+			<!-- <img id="five" class="hangmanImg" src="assets/images/body.png" alt="body">
+			<img id="four" class="hangmanImg" src="assets/images/body.png" alt="shirt">
+			<img id="three" class="hangmanImg" src="assets/images/placeholder.jpg" alt="eyes">
+			<img id="two" class="hangmanImg" src="assets/images/placeholder.jpg" alt="nose">
+			<img id="one" class="hangmanImg" src="assets/images/placeholder.jpg" alt="hair"> -->
 			<!-- column 1 ends -->
 			</div>
 			<!-- container for alphabet buttons -->
@@ -99,11 +104,11 @@ swal({
 	// VARIABLES
 	// ==========================================================================
 	var computerChoices = ["JUDGE", "NURSE", "BAKER", "CODER"];
-	var char0 = "_";
-	var char1 = "_";
-	var char2 = "_";
-	var char3 = "_";
-	var char4 = "_";
+	var char0 = " _ ";
+	var char1 = " _ ";
+	var char2 = " _ ";
+	var char3 = " _ ";
+	var char4 = " _ ";
 	var guessRemain = 10;
 	var hmAnswer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -135,10 +140,26 @@ swal({
 	else{
 		guessRemain -= 1;
 	}
+
+// BUILD HANGMAN IMAGE
+	// if (guessRemain == 9) {
+	// 	$("#test").html("<img id='five' class='hangmanImg' src='assets/images/body.png' alt='body'>");
+	// }
+	// if (guessRemain == 8) {
+	// 	$("#test").html("<img id='five' class='hangmanImg' src='assets/images/body.png' alt='body'>");
+	// 	$("#test").prepend("<img id='four' class='hangmanImg' src='assets/images/shirt.png' alt='shirt'>");
+
+	// }
+	
 	//console.log(guessRemain);
 	var html = 
 			"<div class='row'>" +
-			"<p> Your neighbor is a " + char0 + char1 +char2 + char3 + char4 + "!</p>" +
+			"<p> Your neighbor is a " + 
+			" " + char0 +
+			" " + char1 +
+			" " + char2 + 
+			" " + char3 + 
+			" " + char4 + "!</p>" +
 			"<p> Number of guesses remaining: " + guessRemain + "</p>" +
 			"</div>";
 

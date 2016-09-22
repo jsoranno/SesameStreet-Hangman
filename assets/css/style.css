@@ -63,11 +63,40 @@ h2{
 	position: fixed;
 	width: 100%;
 }
+
+/*Images*/
+/*#test{
+	width:50%;
+	height:50%;
+	background-color: purple;
+}*/
 .placeholderimg {
 	float:left;
 	width:50%;
 }
+/*.hangmanImg {
+	position:relative;
+	top: 0px;
+	left: 0px;
+}
+#five {
+    z-index: 10;
+}
+#four {
+	
+	z-index: 20;
+}
 
+#three {
+	z-index: 30;
+}
+#two {
+	z-index: 30;
+}
+#one {
+	z-index: 30;
+}
+*/
 
 /*footer*/
 
@@ -104,19 +133,6 @@ footer {
 	border: 1px solid #ddd;
 	margin-bottom: 20px;
 }
-/*.alpha h2 {
-	border-bottom: 2px solid #eee;
-	padding-bottom: 20px;
-	margin-bottom: 15px;
-	line-height: 22px;
-	width: 62px;
-	height: 62px;
-	margin-top: 8px;
-	margin-right: 5px;*/
-}
-/*.alpha:last-child {
-	margin-right: 0;
-}*/
 
 /*main*/
 
